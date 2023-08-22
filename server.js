@@ -7,7 +7,7 @@ const server = http.createServer((req, res) => {
     const pathName = parsedUrl.pathname;
 
     if (pathName.includes('documentation.html')) {
-        fs.readFile('documentaiton.html', (err, data) => {
+        fs.readFile('documentation.html', (err, data) => {
             if (err) {
                 res.statusCode = 500;
                 res.end('Internal Server Error');
@@ -29,9 +29,10 @@ const server = http.createServer((req, res) => {
             }
         });
     }
+}
 
-const log = '${new.url} - ${new Date().toISOString()}\n';
-fs.append.File('log.txt', log, (err) => {
+const log = `${req.url} - ${new Date().toISOString()}\n;`
+fs.appendFile('log.txt', log, (err) => {
     if (err) {
         console.error('Error appending to log file:', err);
     }
@@ -39,5 +40,5 @@ fs.append.File('log.txt', log, (err) => {
 
 const port = 8080;
 server.listen(port, () => {
-    console.log('My first Node test server is running on ${port}');
+    console.log(`My first Node test server is running on ${port}`);
 });
