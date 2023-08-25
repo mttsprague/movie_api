@@ -29,14 +29,15 @@ const server = http.createServer((req, res) => {
             }
         });
     }
-}
 
 const log = `${req.url} - ${new Date().toISOString()}\n`;
 fs.appendFile('log.txt', log, (err) => {
     if (err) {
         console.error('Error appending to log file:', err);
-    }
+        }
+    });
 });
+
 
 const port = 8080;
 server.listen(port, () => {
