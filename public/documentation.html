@@ -6,7 +6,7 @@
     <body>
         <h1>Movie API</h1>
         <p>
-            Welcome to the Movie API Documentation! This API Allows you to retrieve information about movies, including details such as title, release year, genre, and more. It provieds a simple and convenient way for users to access movie data programmatically and build applications around it.
+            Welcome to the Movie API Documentation! This API allows you to retrieve information about movies, including details such as title, release year, genre, and more. It provides a simple and convenient way for users to access movie data programmatically and build applications around it.
         </p>
 
         <h2>Supported Requests</h2>
@@ -33,7 +33,7 @@
             </tr>
             <tr>
               <td>Get list of movies by director</td>
-              <td>/movies/directors/[director name]</td>
+              <td>/movies/director/[director name]</td>
               <td>GET</td>
               <td>None</td>
               <td>
@@ -43,7 +43,7 @@
             </tr>
             <tr>
               <td>Get list of movies by genre</td>
-              <td>/movies/genres/[genre]</td>
+              <td>/movies/genre/[genre name]</td>
               <td>GET</td>
               <td>None</td>
               <td>
@@ -65,37 +65,6 @@
                 'genre': 'action' }
               </td>
             </tr>
-            <!-- <tr>
-              <td>Add a movie</td>
-              <td>/movies</td>
-              <td>POST</td>
-              <td>
-                A JSON object holding data about the movie to add, structured
-                like:<br />
-                { 'title': 'Iron Man',<br />
-                'director': 'John Favreau',<br />
-                'release-year': '2008',<br />
-                'genre': 'action' }
-              </td>
-              <td>
-                A JSON object holding data about the student that was added,
-                including an ID:<br />
-                { 'id': '######',<br />
-                'title': 'Iron Man',<br />
-                'director': 'John Favreau',<br />
-                'release-year': '2008',<br />
-                'genre': 'action' }
-              </td>
-            </tr> -->
-            <!-- <tr>
-              <td>Remove a movie by ID</td>
-              <td>/movies/id/[id]</td>
-              <td>DELETE</td>
-              <td>None</td>
-              <td>
-                A text message indicating whether the movie was successfully removed
-              </td>
-            </tr> -->
             <tr>
               <td>Add a user</td>
               <td>/users</td>
@@ -118,8 +87,8 @@
             </tr>
             <tr>
               <td>Add a movie object to a user's favorites list</td>
-              <td>/users/[username]/movies/[movieID]</td>
-              <td>PUT</td>
+              <td>/users/[id]/[movieTitle]</td>
+              <td>POST</td>
               <td>None</td>
               <td>
                 A text message indicating whether the movie was successfully added
@@ -127,15 +96,23 @@
               </td>
             </tr>
             <tr>
-              <td>Remove a movie from a user's favorites list</td>
-              <td>/users/[username]/movies/[movieID]</td>
+              <td>Remove a user's id</td>
+              <td>/users/[id]</td>
               <td>DELETE</td>
               <td>None</td>
               <td>
-                A text message indicating whether the movie was successfully removed
-                from the user's favorited movies
+                A text message indicating whether the id was successfully removed
               </td>
             </tr>
+            <tr>
+                <td>Update a user's ID</td>
+                <td>/users/[id]</td>
+                <td>PUT</td>
+                <td>None</td>
+                <td>
+                  A JSON object holding data about IDs
+                </td>
+              </tr>
           </tbody>
         </table>
       </body>
